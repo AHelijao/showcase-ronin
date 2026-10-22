@@ -1,4 +1,4 @@
-# Ronin — showcase
+﻿# Ronin — showcase
 
 **Portfolio:** [ahelijao.github.io](https://ahelijao.github.io/) · Chapter I  
 **Private source:** not linked (IP / full app)
@@ -52,6 +52,15 @@ Desktop **AI translator** — terminal-inspired UI, local-first, glossary-aware.
 ## Explicitly not in this repo
 
 Application source, models, icons/build artifacts, credentials.
+
+
+## Full source (private)
+
+Access required. The implementation lives in a **private** repository:
+
+- [Project-Ronin](https://github.com/AHelijao/Project-Ronin)
+
+Without collaborator access, GitHub will show **404**. To request access: email [helijao.andriamandranto@gmail.com](mailto:helijao.andriamandranto@gmail.com), message on [LinkedIn](https://linkedin.com/in/helijaoa), or open an issue on **this** showcase repo — I’ll grant access case by case.
 
 ---
 
