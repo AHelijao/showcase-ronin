@@ -1,31 +1,58 @@
 # Ronin — showcase
 
-**Portfolio:** [ahelijao.github.io](https://ahelijao.github.io/) · Chapter I
+**Portfolio:** [ahelijao.github.io](https://ahelijao.github.io/) · Chapter I  
+**Private source:** not linked (IP / full app)
 
-> Sanitized public view. Source stays private. This repo documents *what* and *why*, not the full implementation.
+> Docs-only public view. No binaries, no API keys, no full source tree.
 
-## What it is
+## Elevator
 
-A lightweight **desktop AI translator** with a minimal, keyboard-first UI. Context-aware translation that respects a **custom glossary** — domain terms are preserved instead of “improved” away.
+Desktop **AI translator** — terminal-inspired UI, local-first, glossary-aware. Built to stay in the writing flow when language and jargon mix.
 
-## Problem
+## Need
 
-Mixed-language writing (e.g. franglais) and jargon-heavy text break naive translators. You want speed without leaving the flow, and control over what must not change.
+| Pain | Response |
+|------|----------|
+| Context switches for translation | Always-on lightweight desktop app |
+| Models rewrite protected terms | Custom **glossary** — listed terms stay untouched |
+| Cloud-only assistants | Local model path (e.g. Ollama-class runtime) as a design option |
 
-## What this shows
+## Architecture (sanitized)
 
-- Local desktop product packaging (Python → distributable)
-- LLM integration with business rules (glossary)
-- Small UX surface, high utility
+```text
+┌─────────────────────────────┐
+│  Desktop UI (Tk / terminal) │
+│  themes · fonts · shortcuts │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│  Translation service        │
+│  prompt + glossary merge    │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│  Local / remote LLM runtime │
+└─────────────────────────────┘
+```
+
+**Also explored:** Android port notes (Kotlin) for a portable “terminal” twin — same product idea, different shell.
+
+## What this demonstrates
+
+- Ship a real **local product**, not only a notebook
+- Bind an LLM with **business rules** (glossary), not raw chat
+- Packaging mindset (desktop distributable)
 
 ## Stack
 
-`Python` · `PyInstaller` · LLM API · JSON glossary
+`Python` · desktop UI · `Ollama`-style local inference · JSON glossary · packaging (`PyInstaller`) · optional Android port study
 
-## Status
+## Explicitly not in this repo
 
-Personal / lab tooling. Showcase only — no application binaries or API keys here.
+Application source, models, icons/build artifacts, credentials.
 
 ---
 
-*Helijao Andriamandranto — software & cybersecurity*
+← back to [portfolio](https://ahelijao.github.io/) · Helijao Andriamandranto
